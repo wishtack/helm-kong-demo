@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "kong-demo.fullname" . }}-test-connection"
+  labels:
+{{ include "kong-demo.labels" . | indent 4 }}
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args:  ['{{ include "kong-demo.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
