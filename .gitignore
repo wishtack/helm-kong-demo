@@ -1,2 +1,2 @@
-/charts/*.tgz
-!/charts/splunk*.tgz
+*/charts/*.tgz
+!*/charts/splunk*.tgz
