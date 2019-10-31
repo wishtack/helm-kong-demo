@@ -75,7 +75,7 @@ global:
       # connection to splunk is insecure
       insecureSSL: true
   kubernetes:
-    clusterName: "minikubeb"
+    clusterName: "minikube"
 
 splunk-kubernetes-objects:
   # RBAC is disabled
