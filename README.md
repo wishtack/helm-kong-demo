@@ -28,3 +28,11 @@ helm install helm-kong-demo/kong-demo --name kong-demo \
 ```
 kubectl port-forward service/kong-demo-kong 8443 8444
 ```
+
+## ⚠️ Kubernetes 1.16 compatibility issue
+
+This demo is not compatible with kubernetes 1.16 yet. Please downgrade to 1.15.5.
+
+```
+minikube start --cpus 4 --memory 8192 --kubernetes-version 1.15.5
+```
