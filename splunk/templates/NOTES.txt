@@ -16,6 +16,9 @@
   echo http://$SERVICE_IP:{{ .Values.service.port }}
 {{- else if contains "ClusterIP" .Values.service.type }}
   export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "splunk.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
-  echo "Visit http://127.0.0.1:8080 to use your application"
-  kubectl port-forward $POD_NAME 8080:80
+  echo "Visit http://127.0.0.1:8000 to use your application"
+  kubectl port-forward $POD_NAME 8000:8000
 {{- end }}
+
+Retrieve the splunk password using the following command:
+> kubectl get secret splunk-secerts -o yaml

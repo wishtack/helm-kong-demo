@@ -29,9 +29,20 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: SPLUNK_ETC
+              value: /opt/splunk/etc
+            - name: SPLUNK_START_ARGS
+              value: --accept-license
+            - name: SPLUNK_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: splunk-secrets
+                  key: password
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8000
+              port: http
               protocol: TCP
           livenessProbe:
             httpGet:
