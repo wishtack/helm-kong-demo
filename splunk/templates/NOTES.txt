@@ -20,5 +20,6 @@
   kubectl port-forward $POD_NAME 8000:8000
 {{- end }}
 
-Retrieve the splunk password using the following command:
-> kubectl get secret splunk-secerts -o yaml
+2. Retrieve the splunk password using the following command:
+
+  kubectl get secret splunk-secrets -o jsonpath={.data.password}
