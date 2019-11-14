@@ -76,6 +76,10 @@ global:
       insecureSSL: true
   kubernetes:
     clusterName: "minikube"
+  postgresql:
+    postgresqlDatabase: kong
+    postgresqlUsername: kong
+    postgresqlPassword: kong
 
 kong:
   env:
