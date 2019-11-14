@@ -77,25 +77,8 @@ global:
   kubernetes:
     clusterName: "minikube"
 
-splunk-kubernetes-objects:
-  # RBAC is disabled
-  rbac:
-    create: false
-
-  kubernetes:
-      # connection to kubernetes is insecure
-      insecureSSL: true
-
-
-splunk-kubernetes-metrics:
-  # RBAC is disabled
-  rbac:
-    create: false
-
-  # do not create service account
-  serviceAccount:
-    create: false
-
-  splunk:
-    hec:
-      indexName: minikube
+kong:
+  env:
+    database: postgres
+  postgresql:
+    enabled: true
