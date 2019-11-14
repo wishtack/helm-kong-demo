@@ -1,9 +1,9 @@
 dependencies:
 - name: kong
   repository: https://kubernetes-charts.storage.googleapis.com/
-  version: 0.25.0
+  version: 0.27.0
 - name: splunk
   repository: file://../splunk
   version: 0.1.0
-digest: sha256:64e8529e56330fe50ff4fb312148153fe6894c94eb39904ca81086c933219077
-generated: "2019-11-05T20:31:19.905649+01:00"
+digest: sha256:fcc516beed333a520a4d7c4b3e50088ea4c74091cd81d2ece821902d70384a52
+generated: "2019-11-14T20:50:25.520196+01:00"
