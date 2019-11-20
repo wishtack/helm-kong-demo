@@ -26,5 +26,5 @@ helm install helm-kong-demo/kong-demo --name kong-demo
 * 8444: https kong admin api
 ```
 kubectl port-forward service/kong-demo-kong-admin 8444
-kubectl port-forward service/kong-demo-kong-proxu 8443:443
+kubectl port-forward service/kong-demo-kong-proxy 8443:443
 ```
